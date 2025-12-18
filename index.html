@@ -1,24 +1,179 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>My Portfolio</title>
-  </head>
-  <body>
-    <h1>Hello, I'm Meghana Katukojwala</h1>
-    <h2>Frontend Developer</h2>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>My Portfolio</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: #e5e7eb;
+      line-height: 1.5;
+    }
+    header {
+      background: #020617;
+      border-bottom: 1px solid #1f2937;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+    }
+    header h1 { font-size: 20px; color: #38bdf8; }
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 16px;
+      font-size: 14px;
+    }
+    nav a:hover { color: #38bdf8; }
 
-    <h3>About Me</h3>
-    <p>I build  the visual, interactive part of websites and apps that users see and touch, using HTML, CSS, and JavaScript.</p>
+    main { max-width: 960px; margin: 32px auto; padding: 0 16px 40px; }
 
-    <h3>Projects</h3>
-    <ul>
-      <li>Project 1 - Detecting Spammers and Identifying Fake Users on Social Networks</li>
-      <li>Project 2 - Blockchain Based Secure Computation Offloading in Vehicular Networks</li>
-    </ul>
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .hero-title { font-size: 32px; margin-bottom: 12px; }
+    .hero-subtitle { color: #9ca3af; margin-bottom: 16px; }
+    .hero-tags span {
+      display: inline-block;
+      background: #111827;
+      border: 1px solid #1f2937;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-right: 8px;
+      margin-bottom: 8px;
+    }
+    .hero-card {
+      background: radial-gradient(circle at top left, #22c55e33, #0f172a);
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #22c55e44;
+    }
+    .hero-card h2 { font-size: 16px; margin-bottom: 6px; }
+    .hero-card p { font-size: 14px; color: #d1d5db; }
 
-    <h3>Contact</h3>
-    <p>Email: meghanakt09@gmail.com</p>
-  </body>
+    section { margin-bottom: 40px; }
+    section h2 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #1f2937;
+      padding-bottom: 6px;
+    }
+    .projects-grid {
+      display: grid;
+      gap: 16px;
+    }
+    @media (min-width: 768px) {
+      .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    .project-card {
+      background: #020617;
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #1f2937;
+    }
+    .project-card h3 { font-size: 16px; margin-bottom: 4px; }
+    .project-card p { font-size: 14px; color: #9ca3af; margin-bottom: 6px; }
+    .project-meta { font-size: 12px; color: #6b7280; }
+
+    .contact { font-size: 14px; color: #d1d5db; }
+    .contact a { color: #38bdf8; text-decoration: none; }
+    .contact a:hover { text-decoration: underline; }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+      padding: 16px;
+      border-top: 1px solid #1f2937;
+      background: #020617;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Your Name</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <p style="color:#38bdf8; font-size:13px; margin-bottom:8px;">PORTFOLIO</p>
+        <h2 class="hero-title">Developer & Automation Builder</h2>
+        <p class="hero-subtitle">
+          I build web applications, business automations, and tools that help companies run faster and smarter.
+        </p>
+        <div class="hero-tags">
+          <span>Full‑stack Web</span>
+          <span>Automation</span>
+          <span>APIs</span>
+          <span>AI Tools</span>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2>Currently working on</h2>
+        <p>
+          • Internal tools for operations and reporting<br />
+          • Automations for email, data, and workflows<br />
+          • Product experiments with AI and voice agents
+        </p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p style="color:#d1d5db; font-size:14px;">
+        Short intro about you. Mention your main skills, what types of projects you enjoy,
+        and what kind of work you are looking for.
+      </p>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <h3>Project One</h3>
+          <p>Brief description of what the project does and why it is useful.</p>
+          <p class="project-meta">Tech: HTML, CSS, JavaScript</p>
+        </article>
+        <article class="project-card">
+          <h3>Project Two</h3>
+          <p>Brief description of the problem it solves or process it automates.</p>
+          <p class="project-meta">Tech: Node.js, APIs</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact">
+        Email: <a href="mailto:you@example.com">you@example.com</a><br />
+        GitHub: <a href="https://github.com/yourusername" target="_blank">github.com/yourusername</a>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your Name. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>
+
 
